@@ -1,0 +1,57 @@
+Generating report for minidump
+
+Application version 5.3.1.0
+ ... built from changelist 0
+
+OS version Linux 6.6.6-zen1-1-zen (network name: micle-pc)
+Running 8 x86_64 processors (16 logical cores)
+Exception was "Ensure condition failed: Found  [File:./Runtime/CoreUObject/Private/Misc/RedirectCollector.cpp] [Line: 269] "
+
+<SOURCE START>
+<SOURCE END>
+
+<CALLSTACK START>
+libUnrealEditor-CoreUObject.so!FRedirectCollector::RemoveAssetPathRedirection(FSoftObjectPath const&) [/home/micle/Programs/UnrealEngine/Engine/Source/./Runtime/CoreUObject/Private/Misc/RedirectCollector.cpp:269]
+libUnrealEditor-AssetRegistry.so!UAssetRegistryImpl::AssetDeleted(UObject*) [/home/micle/Programs/UnrealEngine/Engine/Source/./Runtime/AssetRegistry/Private/AssetRegistry.cpp:3680]
+libUnrealEditor-UnrealEd.so!ObjectTools::DeleteSingleObject(UObject*, bool) [/home/micle/Programs/UnrealEngine/Engine/Source/./Editor/UnrealEd/Private/ObjectTools.cpp:3197]
+libUnrealEditor-UnrealEd.so!ObjectTools::ForceDeleteObjects(TArray<UObject*, TSizedDefaultAllocator<32> > const&, bool) [/home/micle/Programs/UnrealEngine/Engine/Source/./Editor/UnrealEd/Private/ObjectTools.cpp:3639]
+libUnrealEditor-UnrealEd.so!FAssetDeleteModel::DoForceDelete() [/home/micle/Programs/UnrealEngine/Engine/Source/./Editor/UnrealEd/Private/AssetDeleteModel.cpp:322]
+libUnrealEditor-UnrealEd.so!SDeleteAssetsDialog::ForceDelete() [/home/micle/Programs/UnrealEngine/Engine/Source/./Editor/UnrealEd/Private/Dialogs/SDeleteAssetsDialog.cpp:725]
+libUnrealEditor-UnrealEd.so!TBaseSPMethodDelegateInstance<false, SDeleteAssetsDialog, (ESPMode)1, FReply (), FDefaultDelegateUserPolicy>::Execute() const [/home/micle/Programs/UnrealEngine/Engine/Source/Runtime/Core/Public/Delegates/DelegateInstancesImpl.h:281]
+libUnrealEditor-Slate.so!SButton::ExecuteOnClick() [/home/micle/Programs/UnrealEngine/Engine/Source/./Runtime/Slate/Private/Widgets/Input/SButton.cpp:465]
+libUnrealEditor-Slate.so!SButton::OnMouseButtonUp(FGeometry const&, FPointerEvent const&) [/home/micle/Programs/UnrealEngine/Engine/Source/./Runtime/Slate/Private/Widgets/Input/SButton.cpp:390]
+libUnrealEditor-Slate.so!FSlateApplication::RoutePointerUpEvent(FWidgetPath const&, FPointerEvent const&) [/home/micle/Programs/UnrealEngine/Engine/Source/./Runtime/Slate/Private/Framework/Application/SlateApplication.cpp:5207]
+libUnrealEditor-Slate.so!FSlateApplication::ProcessMouseButtonUpEvent(FPointerEvent const&) [/home/micle/Programs/UnrealEngine/Engine/Source/./Runtime/Slate/Private/Framework/Application/SlateApplication.cpp:5775]
+libUnrealEditor-Slate.so!FSlateApplication::OnMouseUp(EMouseButtons::Type, UE::Math::TVector2<double>) [/home/micle/Programs/UnrealEngine/Engine/Source/./Runtime/Slate/Private/Framework/Application/SlateApplication.cpp:5740]
+libUnrealEditor-ApplicationCore.so!FLinuxApplication::ProcessDeferredMessage(SDL_Event) [/home/micle/Programs/UnrealEngine/Engine/Source/./Runtime/ApplicationCore/Private/Linux/LinuxApplication.cpp:415]
+libUnrealEditor-ApplicationCore.so!FLinuxPlatformApplicationMisc::PumpMessages(bool) [/home/micle/Programs/UnrealEngine/Engine/Source/./Runtime/ApplicationCore/Private/Linux/LinuxPlatformApplicationMisc.cpp:442]
+libUnrealEditor-Slate.so!FSlateApplication::TickPlatform(float) [/home/micle/Programs/UnrealEngine/Engine/Source/./Runtime/Slate/Private/Framework/Application/SlateApplication.cpp:1576]
+libUnrealEditor-Slate.so!FSlateApplication::AddModalWindow(TSharedRef<SWindow, (ESPMode)1>, TSharedPtr<SWidget const, (ESPMode)1>, bool) [/home/micle/Programs/UnrealEngine/Engine/Source/./Runtime/Slate/Private/Framework/Application/SlateApplication.cpp:2109]
+libUnrealEditor-UnrealEd.so!UEditorEngine::EditorAddModalWindow(TSharedRef<SWindow, (ESPMode)1>) const [/home/micle/Programs/UnrealEngine/Engine/Source/./Editor/UnrealEd/Private/EditorEngine.cpp:4212]
+libUnrealEditor-UnrealEd.so!ObjectTools::DeleteObjects(TArray<UObject*, TSizedDefaultAllocator<32> > const&, bool, ObjectTools::EAllowCancelDuringDelete) [/home/micle/Programs/UnrealEngine/Engine/Source/./Editor/UnrealEd/Private/ObjectTools.cpp:2899]
+libUnrealEditor-AssetTools.so!AssetViewUtils::DeleteFolders(TArray<FString, TSizedDefaultAllocator<32> > const&) [/home/micle/Programs/UnrealEngine/Engine/Source/./Developer/AssetTools/Private/AssetViewUtils.cpp:394]
+libUnrealEditor-ContentBrowserAssetDataSource.so!ContentBrowserAssetData::DeleteAssetFolderItems(TArrayView<TSharedRef<FContentBrowserAssetFolderItemDataPayload const, (ESPMode)1> const, int>) [/home/micle/Programs/UnrealEngine/Engine/Source/./../Plugins/Editor/ContentBrowser/ContentBrowserAssetDataSource/Source/ContentBrowserAssetDataSource/Private/ContentBrowserAssetDataCore.cpp:880]
+libUnrealEditor-ContentBrowserAssetDataSource.so!ContentBrowserAssetData::DeleteItems(IAssetTools*, IAssetRegistry*, UContentBrowserDataSource const*, TArrayView<FContentBrowserItemData const, int>) [/home/micle/Programs/UnrealEngine/Engine/Source/./../Plugins/Editor/ContentBrowser/ContentBrowserAssetDataSource/Source/ContentBrowserAssetDataSource/Private/ContentBrowserAssetDataCore.cpp:824]
+libUnrealEditor-ContentBrowser.so!FPathContextMenu::ExecuteDeleteFolderConfirmed() [/home/micle/Programs/UnrealEngine/Engine/Source/./Editor/ContentBrowser/Private/PathContextMenu.cpp:583]
+libUnrealEditor-ContentBrowser.so!TBaseSPMethodDelegateInstance<false, FPathContextMenu, (ESPMode)1, FReply (), FDefaultDelegateUserPolicy>::Execute() const [/home/micle/Programs/UnrealEngine/Engine/Source/Runtime/Core/Public/Delegates/DelegateInstancesImpl.h:281]
+libUnrealEditor-ContentBrowser.so!SContentBrowserConfirmPopup::YesClicked() [/home/micle/Programs/UnrealEngine/Engine/Source/./Editor/ContentBrowser/Private/ContentBrowserUtils.cpp:261]
+libUnrealEditor-ContentBrowser.so!TBaseSPMethodDelegateInstance<false, SContentBrowserConfirmPopup, (ESPMode)1, FReply (), FDefaultDelegateUserPolicy>::Execute() const [/home/micle/Programs/UnrealEngine/Engine/Source/Runtime/Core/Public/Delegates/DelegateInstancesImpl.h:281]
+libUnrealEditor-Slate.so!SButton::ExecuteOnClick() [/home/micle/Programs/UnrealEngine/Engine/Source/./Runtime/Slate/Private/Widgets/Input/SButton.cpp:465]
+libUnrealEditor-Slate.so!SButton::OnMouseButtonUp(FGeometry const&, FPointerEvent const&) [/home/micle/Programs/UnrealEngine/Engine/Source/./Runtime/Slate/Private/Widgets/Input/SButton.cpp:390]
+libUnrealEditor-Slate.so!FSlateApplication::RoutePointerUpEvent(FWidgetPath const&, FPointerEvent const&) [/home/micle/Programs/UnrealEngine/Engine/Source/./Runtime/Slate/Private/Framework/Application/SlateApplication.cpp:5207]
+libUnrealEditor-Slate.so!FSlateApplication::ProcessMouseButtonUpEvent(FPointerEvent const&) [/home/micle/Programs/UnrealEngine/Engine/Source/./Runtime/Slate/Private/Framework/Application/SlateApplication.cpp:5775]
+libUnrealEditor-Slate.so!FSlateApplication::OnMouseUp(EMouseButtons::Type, UE::Math::TVector2<double>) [/home/micle/Programs/UnrealEngine/Engine/Source/./Runtime/Slate/Private/Framework/Application/SlateApplication.cpp:5740]
+libUnrealEditor-ApplicationCore.so!FLinuxApplication::ProcessDeferredMessage(SDL_Event) [/home/micle/Programs/UnrealEngine/Engine/Source/./Runtime/ApplicationCore/Private/Linux/LinuxApplication.cpp:415]
+libUnrealEditor-ApplicationCore.so!FLinuxPlatformApplicationMisc::PumpMessages(bool) [/home/micle/Programs/UnrealEngine/Engine/Source/./Runtime/ApplicationCore/Private/Linux/LinuxPlatformApplicationMisc.cpp:442]
+UnrealEditor!FEngineLoop::Tick() [/home/micle/Programs/UnrealEngine/Engine/Source/./Runtime/Launch/Private/LaunchEngineLoop.cpp:5743]
+UnrealEditor!GuardedMain(char16_t const*) [/home/micle/Programs/UnrealEngine/Engine/Source/./Runtime/Launch/Private/Launch.cpp:190]
+libUnrealEditor-UnixCommonStartup.so!CommonUnixMain(int, char**, int (*)(char16_t const*), void (*)()) [/home/micle/Programs/UnrealEngine/Engine/Source/./Runtime/Unix/UnixCommonStartup/Private/UnixCommonStartup.cpp:269]
+libc.so.6!UnknownFunction(0x27ccf)
+libc.so.6!__libc_start_main(+0x89)
+UnrealEditor!_start()
+
+<CALLSTACK END>
+
+0 loaded modules
+
+Report end!

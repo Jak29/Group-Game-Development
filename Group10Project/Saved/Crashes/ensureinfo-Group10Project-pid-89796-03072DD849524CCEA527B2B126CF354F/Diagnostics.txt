@@ -1,0 +1,47 @@
+Generating report for minidump
+
+Application version 5.3.1.0
+ ... built from changelist 0
+
+OS version Linux 6.6.6-zen1-1-zen (network name: micle-pc)
+Running 8 x86_64 processors (16 logical cores)
+Exception was "Ensure condition failed: !bGraphDataInvalid  [File:./Editor/GraphEditor/Private/SGraphPin.cpp] [Line: 914] "
+
+<SOURCE START>
+<SOURCE END>
+
+<CALLSTACK START>
+libUnrealEditor-GraphEditor.so!SGraphPin::GetPinObj() const [/home/micle/Programs/UnrealEngine/Engine/Source/./Editor/GraphEditor/Private/SGraphPin.cpp:914]
+libUnrealEditor-GraphEditor.so!SGraphNode::GetNodeTooltip() const [/home/micle/Programs/UnrealEngine/Engine/Source/./Editor/GraphEditor/Private/SGraphNode.cpp:679]
+libUnrealEditor-GraphEditor.so!SGraphNodeK2Base::GetComplexTooltip()::LocalUtils::IsToolTipVisible(TWeakPtr<SGraphNodeK2Base, (ESPMode)1>) [/home/micle/Programs/UnrealEngine/Engine/Source/./Editor/GraphEditor/Private/KismetNodes/SGraphNodeK2Base.cpp:323]
+libUnrealEditor-GraphEditor.so!TBaseStaticDelegateInstance<EVisibility (), FDefaultDelegateUserPolicy, TWeakPtr<SGraphNodeK2Base, (ESPMode)1> >::Execute() const [/home/micle/Programs/UnrealEngine/Engine/Source/Runtime/Core/Public/Delegates/DelegateInstancesImpl.h:767]
+libUnrealEditor-SlateCore.so!SlateAttributePrivate::TSlateAttributeBase<SWidget, EVisibility, SlateAttributePrivate::FSlateAttributeNoInvalidationReason, TSlateAttributeComparePredicate<TEqualTo<void> >, (SlateAttributePrivate::ESlateAttributeType)0>::FSlateAttributeGetterWrapper<SlateAttributePrivate::TSlateAttributeBase<SWidget, EVisibility, SlateAttributePrivate::FSlateAttributeNoInvalidationReason, TSlateAttributeComparePredicate<TEqualTo<void> >, (SlateAttributePrivate::ESlateAttributeType)0> >::UpdateAttribute(SWidget const&) [/home/micle/Programs/UnrealEngine/Engine/Source/Runtime/SlateCore/Public/Types/Attributes/SlateAttributeBase.inl:585]
+libUnrealEditor-SlateCore.so!FSlateAttributeMetaData::UpdateAttributesImpl(SWidget&, FSlateAttributeMetaData::EInvalidationPermission, int, int) [/home/micle/Programs/UnrealEngine/Engine/Source/./Runtime/SlateCore/Private/Types/SlateAttributeMetaData.cpp:491]
+libUnrealEditor-SlateCore.so!FSlateAttributeMetaData::UpdateChildrenOnlyVisibilityAttributes(SWidget&, FSlateAttributeMetaData::EInvalidationPermission, bool) [/home/micle/Programs/UnrealEngine/Engine/Source/./Runtime/SlateCore/Private/Types/SlateAttributeMetaData.cpp:459]
+libUnrealEditor-SlateCore.so!SWidget::ArrangeChildren(FGeometry const&, FArrangedChildren&, bool) const [/home/micle/Programs/UnrealEngine/Engine/Source/./Runtime/SlateCore/Private/Widgets/SWidget.cpp:1719]
+libUnrealEditor-Slate.so!bool FWidgetPath::SearchForWidgetRecursively<FWidgetMatcher>(FWidgetMatcher const&, FArrangedWidget const&, FArrangedChildren&, EVisibility) [/home/micle/Programs/UnrealEngine/Engine/Source/Runtime/SlateCore/Public/Layout/WidgetPath.inl:27]
+libUnrealEditor-Slate.so!bool FWidgetPath::SearchForWidgetRecursively<FWidgetMatcher>(FWidgetMatcher const&, FArrangedWidget const&, FArrangedChildren&, EVisibility) [/home/micle/Programs/UnrealEngine/Engine/Source/Runtime/SlateCore/Public/Layout/WidgetPath.inl:37]
+libUnrealEditor-SlateCore.so!bool FWidgetPath::ExtendPathTo<FWidgetMatcher>(FWidgetMatcher const&, EVisibility) [/home/micle/Programs/UnrealEngine/Engine/Source/Runtime/SlateCore/Public/Layout/WidgetPath.h:108]
+libUnrealEditor-SlateCore.so!FSlateWindowHelper::FindPathToWidget(TArray<TSharedRef<SWindow, (ESPMode)1>, TSizedDefaultAllocator<32> > const&, TSharedRef<SWidget const, (ESPMode)1>, FWidgetPath&, EVisibility) [/home/micle/Programs/UnrealEngine/Engine/Source/./Runtime/SlateCore/Private/Application/SlateWindowHelper.cpp:166]
+libUnrealEditor-Slate.so!FSlateApplication::SetUserFocus(unsigned int, TSharedPtr<SWidget, (ESPMode)1> const&, EFocusCause) [/home/micle/Programs/UnrealEngine/Engine/Source/./Runtime/Slate/Private/Framework/Application/SlateApplication.cpp:2587]
+libUnrealEditor-Slate.so!FSlateUser::SetFocus(TSharedRef<SWidget, (ESPMode)1> const&, EFocusCause) [/home/micle/Programs/UnrealEngine/Engine/Source/./Runtime/Slate/Private/Framework/Application/SlateUser.cpp:175]
+libUnrealEditor-Slate.so!FSlateApplication::ProcessReply(FWidgetPath const&, FReply const&, FWidgetPath const*, FPointerEvent const*, unsigned int) [/home/micle/Programs/UnrealEngine/Engine/Source/./Runtime/Slate/Private/Framework/Application/SlateApplication.cpp:3536]
+libUnrealEditor-Slate.so!FSlateApplication::SetUserFocus(FSlateUser&, FWidgetPath const&, EFocusCause) [/home/micle/Programs/UnrealEngine/Engine/Source/./Runtime/Slate/Private/Framework/Application/SlateApplication.cpp:2986]
+libUnrealEditor-Slate.so!FSlateApplication::SetUserFocus(unsigned int, FWidgetPath const&, EFocusCause) [/home/micle/Programs/UnrealEngine/Engine/Source/./Runtime/Slate/Private/Framework/Application/SlateApplication.cpp:2809]
+libUnrealEditor-Slate.so!FSlateApplication::RoutePointerDownEvent(FWidgetPath const&, FPointerEvent const&) [/home/micle/Programs/UnrealEngine/Engine/Source/./Runtime/Slate/Private/Framework/Application/SlateApplication.cpp:5149]
+libUnrealEditor-Slate.so!FSlateApplication::ProcessMouseButtonDownEvent(TSharedPtr<FGenericWindow, (ESPMode)1> const&, FPointerEvent const&) [/home/micle/Programs/UnrealEngine/Engine/Source/./Runtime/Slate/Private/Framework/Application/SlateApplication.cpp:5038]
+libUnrealEditor-Slate.so!FSlateApplication::OnMouseDown(TSharedPtr<FGenericWindow, (ESPMode)1> const&, EMouseButtons::Type, UE::Math::TVector2<double>) [/home/micle/Programs/UnrealEngine/Engine/Source/./Runtime/Slate/Private/Framework/Application/SlateApplication.cpp:4936]
+libUnrealEditor-ApplicationCore.so!FLinuxApplication::ProcessDeferredMessage(SDL_Event) [/home/micle/Programs/UnrealEngine/Engine/Source/./Runtime/ApplicationCore/Private/Linux/LinuxApplication.cpp:454]
+libUnrealEditor-ApplicationCore.so!FLinuxPlatformApplicationMisc::PumpMessages(bool) [/home/micle/Programs/UnrealEngine/Engine/Source/./Runtime/ApplicationCore/Private/Linux/LinuxPlatformApplicationMisc.cpp:442]
+UnrealEditor!FEngineLoop::Tick() [/home/micle/Programs/UnrealEngine/Engine/Source/./Runtime/Launch/Private/LaunchEngineLoop.cpp:5743]
+UnrealEditor!GuardedMain(char16_t const*) [/home/micle/Programs/UnrealEngine/Engine/Source/./Runtime/Launch/Private/Launch.cpp:190]
+libUnrealEditor-UnixCommonStartup.so!CommonUnixMain(int, char**, int (*)(char16_t const*), void (*)()) [/home/micle/Programs/UnrealEngine/Engine/Source/./Runtime/Unix/UnixCommonStartup/Private/UnixCommonStartup.cpp:269]
+libc.so.6!UnknownFunction(0x27ccf)
+libc.so.6!__libc_start_main(+0x89)
+UnrealEditor!_start()
+
+<CALLSTACK END>
+
+0 loaded modules
+
+Report end!

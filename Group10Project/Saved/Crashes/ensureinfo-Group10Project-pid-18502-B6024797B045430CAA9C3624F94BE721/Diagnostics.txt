@@ -1,0 +1,47 @@
+Generating report for minidump
+
+Application version 5.3.1.0
+ ... built from changelist 0
+
+OS version Linux 6.6.6-zen1-1-zen (network name: micle-pc)
+Running 8 x86_64 processors (16 logical cores)
+Exception was "Ensure condition failed: GExitPurge || !IsGarbageCollecting()  [File:./Runtime/UMG/Private/Slate/SObjectWidget.cpp] [Line: 43] "
+
+<SOURCE START>
+<SOURCE END>
+
+<CALLSTACK START>
+libUnrealEditor-UMG.so!SObjectWidget::~SObjectWidget() [/home/micle/Programs/UnrealEngine/Engine/Source/./Runtime/UMG/Private/Slate/SObjectWidget.cpp:43]
+libUnrealEditor-SlateCore.so!FSlotBase::~FSlotBase() [/home/micle/Programs/UnrealEngine/Engine/Source/./Runtime/SlateCore/Private/SlotBase.cpp:111]
+libUnrealEditor-Engine.so!SHorizontalBox::FSlot::~FSlot() [/home/micle/Programs/UnrealEngine/Engine/Source/Runtime/SlateCore/Public/Widgets/SBoxPanel.h:234]
+libUnrealEditor-Engine.so!SharedPointerInternals::TIntrusiveReferenceController<SHorizontalBox, (ESPMode)1>::DestroyObject() [/home/micle/Programs/UnrealEngine/Engine/Source/Runtime/Core/Public/Templates/SharedPointerInternals.h:395]
+libUnrealEditor-SlateCore.so!FSlotBase::~FSlotBase() [/home/micle/Programs/UnrealEngine/Engine/Source/./Runtime/SlateCore/Private/SlotBase.cpp:111]
+libUnrealEditor-SlateCore.so!SOverlay::FOverlaySlot::~FOverlaySlot() [/home/micle/Programs/UnrealEngine/Engine/Source/Runtime/SlateCore/Public/Widgets/SOverlay.h:41]
+libUnrealEditor-Engine.so!SharedPointerInternals::TIntrusiveReferenceController<SOverlay, (ESPMode)1>::DestroyObject() [/home/micle/Programs/UnrealEngine/Engine/Source/Runtime/Core/Public/Templates/SharedPointerInternals.h:395]
+libUnrealEditor-SlateCore.so!FSlotBase::~FSlotBase() [/home/micle/Programs/UnrealEngine/Engine/Source/./Runtime/SlateCore/Private/SlotBase.cpp:111]
+libUnrealEditor-Slate.so!SConstraintCanvas::FSlot::~FSlot() [/home/micle/Programs/UnrealEngine/Engine/Source/Runtime/Slate/Public/Widgets/Layout/SConstraintCanvas.h:33]
+libUnrealEditor-UMG.so!SharedPointerInternals::TIntrusiveReferenceController<SConstraintCanvas, (ESPMode)1>::DestroyObject() [/home/micle/Programs/UnrealEngine/Engine/Source/Runtime/Core/Public/Templates/SharedPointerInternals.h:395]
+libUnrealEditor-UMG.so!UCanvasPanel::ReleaseSlateResources(bool) [/home/micle/Programs/UnrealEngine/Engine/Source/./Runtime/UMG/Private/Components/CanvasPanel.cpp:25]
+libUnrealEditor-CoreUObject.so!UObject::ConditionalBeginDestroy() [/home/micle/Programs/UnrealEngine/Engine/Source/./Runtime/CoreUObject/Private/UObject/Obj.cpp:1142]
+libUnrealEditor-CoreUObject.so!UnhashUnreachableObjects(bool, double) [/home/micle/Programs/UnrealEngine/Engine/Source/./Runtime/CoreUObject/Private/UObject/GarbageCollection.cpp:4832]
+libUnrealEditor-CoreUObject.so!void UE::GC::CollectGarbageImpl<true>(EObjectFlags) [/home/micle/Programs/UnrealEngine/Engine/Source/./Runtime/CoreUObject/Private/UObject/GarbageCollection.cpp:4731]
+libUnrealEditor-CoreUObject.so!UE::GC::CollectGarbageFull(EObjectFlags) [/home/micle/Programs/UnrealEngine/Engine/Source/./Runtime/CoreUObject/Private/UObject/GarbageCollection.cpp:4538]
+libUnrealEditor-CoreUObject.so!CollectGarbage(EObjectFlags, bool) [/home/micle/Programs/UnrealEngine/Engine/Source/./Runtime/CoreUObject/Private/UObject/GarbageCollection.cpp:4887]
+libUnrealEditor-UnrealEd.so!FInternalPlayLevelUtils::ResolveDirtyBlueprints(bool, TArray<UBlueprint*, TSizedDefaultAllocator<32> >&, bool) [/home/micle/Programs/UnrealEngine/Engine/Source/./Editor/UnrealEd/Private/PlayLevel.cpp:1333]
+libUnrealEditor-UnrealEd.so!UEditorEngine::StartPlayInEditorSession(FRequestPlaySessionParams&) [/home/micle/Programs/UnrealEngine/Engine/Source/./Editor/UnrealEd/Private/PlayLevel.cpp:2617]
+libUnrealEditor-UnrealEd.so!UEditorEngine::StartQueuedPlaySessionRequestImpl() [/home/micle/Programs/UnrealEngine/Engine/Source/./Editor/UnrealEd/Private/PlayLevel.cpp:1150]
+libUnrealEditor-UnrealEd.so!UEditorEngine::StartQueuedPlaySessionRequest() [/home/micle/Programs/UnrealEngine/Engine/Source/./Editor/UnrealEd/Private/PlayLevel.cpp:1062]
+libUnrealEditor-UnrealEd.so!UEditorEngine::Tick(float, bool) [/home/micle/Programs/UnrealEngine/Engine/Source/./Editor/UnrealEd/Private/EditorEngine.cpp:1810]
+libUnrealEditor-UnrealEd.so!UUnrealEdEngine::Tick(float, bool) [/home/micle/Programs/UnrealEngine/Engine/Source/./Editor/UnrealEd/Private/UnrealEdEngine.cpp:528]
+UnrealEditor!FEngineLoop::Tick() [/home/micle/Programs/UnrealEngine/Engine/Source/./Runtime/Launch/Private/LaunchEngineLoop.cpp:5819]
+UnrealEditor!GuardedMain(char16_t const*) [/home/micle/Programs/UnrealEngine/Engine/Source/./Runtime/Launch/Private/Launch.cpp:190]
+libUnrealEditor-UnixCommonStartup.so!CommonUnixMain(int, char**, int (*)(char16_t const*), void (*)()) [/home/micle/Programs/UnrealEngine/Engine/Source/./Runtime/Unix/UnixCommonStartup/Private/UnixCommonStartup.cpp:269]
+libc.so.6!UnknownFunction(0x27ccf)
+libc.so.6!__libc_start_main(+0x89)
+UnrealEditor!_start()
+
+<CALLSTACK END>
+
+0 loaded modules
+
+Report end!
